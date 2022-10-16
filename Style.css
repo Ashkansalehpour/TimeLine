@@ -1,0 +1,154 @@
+ /*
+    Title: TimeLine Project;
+    Version: 1.0 v;
+    Developer: Ashkan Salehpour;
+    Modified Date: 10/16/2022;
+    Description: Beautiful Timeline design with HTML/CSS  
+ */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #2e365a;
+}
+
+a{
+    text-decoration: none;
+}
+/* Start TimeLine */
+.timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+/* Structure Container */
+.container{
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+    
+}
+/* Start MoveDown Animation */
+@keyframes movedown {
+    0%{
+        opacity: 1;
+        transform: translateY(-30px);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.container:nth-child(1){
+    animation-delay: 0s;
+}
+.container:nth-child(2){
+    animation-delay: 1s;
+}
+.container:nth-child(3){
+    animation-delay: 2s;
+}
+.container:nth-child(4){
+    animation-delay: 3s;
+}
+.container:nth-child(5){
+    animation-delay: 4s;
+}
+.container:nth-child(6){
+    animation-delay: 5s;
+}
+.container:nth-child(7){
+    animation-delay: 6s;
+}
+/* End MoveDown Animation */
+
+/* Start creating TextBox */
+.textbox{
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.left-container{
+    left: 0;
+}
+.right-container{
+    left: 50%;
+}
+.container img{
+    position: absolute;
+    width: 40px;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+}
+.right-container img{
+    left: -20px;
+}
+.timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index:-1;
+    animation: moveline 6s linear forwards;
+}
+/* Start MoveLine Animation */
+@keyframes moveline {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+    
+}
+/* End MoveLine Animation */
+.textbox h2{
+    font-weight: 600;
+}
+.textbox small{
+    display: inline-block;
+    margin-bottom: 15px;
+
+}
+
+.left-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #fefefe;
+    right: -15px;
+}
+.right-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fefefe;
+    left: -15px;
+}
+/* End creating TextBox */
+
+/* End TimeLine */
